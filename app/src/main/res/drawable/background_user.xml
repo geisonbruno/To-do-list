@@ -1,0 +1,17 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Ícone do EditText -->
+    <item android:drawable="@drawable/ic_usuario"
+        android:height="24dp"
+        android:width="24dp"
+        android:gravity="start|center_vertical"
+        android:left="10dp" />
+
+    <!-- Fundo do EditText -->
+    <item>
+        <shape xmlns:android="http://schemas.android.com/apk/res/android">
+            <solid android:color="#39FFFEFE"/> <!-- Background color -->
+            <corners android:radius="20dp"/> <!-- Optional: for rounded corners -->
+            <stroke android:width="0.5dp" android:color="#00EAEAEA"/> <!-- Border color and width -->
+        </shape>
+    </item>
+</layer-list>
