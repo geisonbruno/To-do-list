@@ -1,4 +1,4 @@
-package com.example.to_do.util
+package com.example.to_do.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
