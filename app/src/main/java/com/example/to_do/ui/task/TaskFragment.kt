@@ -14,7 +14,6 @@ import com.example.to_do.viewmodel.TaskViewModel
 class TaskFragment : Fragment() {
 
     private val viewModel: TaskViewModel by viewModels()
-    private lateinit var adapter: TaskAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -24,8 +23,6 @@ class TaskFragment : Fragment() {
         val binding = FragmentTaskBinding.inflate(inflater)
 
         binding.apply {
-
-            binding.recyclerView.adapter = adapter
 
             floatingActionButton.setOnClickListener {
                 findNavController().navigate(R.id.action_taskFragment_to_addFragment)
