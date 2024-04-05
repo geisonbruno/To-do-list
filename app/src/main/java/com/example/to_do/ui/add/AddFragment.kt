@@ -14,7 +14,9 @@ import com.example.to_do.R
 import com.example.to_do.database.TaskEntry
 import com.example.to_do.databinding.FragmentAddBinding
 import com.example.to_do.viewmodel.TaskViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class AddFragment : Fragment() {
 
     private val viewModel: TaskViewModel by viewModels()
@@ -33,23 +35,25 @@ class AddFragment : Fragment() {
 
         binding.apply {
             spinner.adapter = myAdapter
-            btnAdd.setOnClickListener {
-                if (TextUtils.isEmpty((edtTask.text))) {
+            binding.btnAdd.setOnClickListener {
+                if (TextUtils.isEmpty((binding.edtTask.text))) {
                     Toast.makeText(requireContext(), "It's empty!", Toast.LENGTH_SHORT).show()
-                    return@setOnClickListener
-                }
-                val title_str = edtTask.text.toString()
-                val priority = spinner.selectedItemPosition
+                } else {
+                    val titleStr = binding.edtTask.text.toString()
+                    val priority = binding.spinner.selectedItemPosition
 
-                val taskEntry = TaskEntry(
-                    0,
-                    title_str,
-                    priority,
-                    System.currentTimeMillis()
-                )
-                viewModel.insert(taskEntry)
-                Toast.makeText(requireContext(), "Successfully added!", Toast.LENGTH_SHORT).show()
-                findNavController().navigate(R.id.action_addFragment_to_taskFragment)
+                    val taskEntry = TaskEntry(
+                        0,
+                        titleStr,
+                        priority,
+                        System.currentTimeMillis()
+                    )
+                    viewModel.insert(taskEntry)
+                    Toast.makeText(requireContext(), "Successfully added!", Toast.LENGTH_SHORT)
+                        .show()
+                    val direction = AddFragmentDirections.actionAddFragmentToTaskFragment()
+                    findNavController().navigate(direction)
+                }
             }
         }
 

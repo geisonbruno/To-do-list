@@ -4,34 +4,40 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
-import com.example.to_do.database.TaskDatabase
 import com.example.to_do.database.TaskEntry
 import com.example.to_do.repository.TaskRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class TaskViewModel(application: Application) : AndroidViewModel(application) {
+@HiltViewModel
+class TaskViewModel @Inject constructor(
+    application: Application,
+    private val repository: TaskRepository // Injetado pelo Hilt
+) : AndroidViewModel(application) {
 
-    private val taskDao = TaskDatabase.getDatabase(application).taskDao()
-    private val repository : TaskRepository
+    val getAllTasks: LiveData<List<TaskEntry>> = repository.getAllTasks()
 
-    val getAllTasks: LiveData<List<TaskEntry>>
-    init {
-        repository = TaskRepository(taskDao)
-        getAllTasks = repository.getAllTasks()
-    }
-
-    fun insert(taskEntry: TaskEntry){
+    fun insert(taskEntry: TaskEntry) {
         viewModelScope.launch(Dispatchers.IO) {
             repository.insert(taskEntry)
         }
     }
-    fun delete(taskEntry: TaskEntry){
+
+    fun delete(taskEntry: TaskEntry) {
         viewModelScope.launch(Dispatchers.IO) {
             repository.deleteItem(taskEntry)
         }
     }
-    fun deleteAll(){
+
+    fun update(taskEntry: TaskEntry) {
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.updateData(taskEntry)
+        }
+    }
+
+    fun deleteAll() {
         viewModelScope.launch(Dispatchers.IO) {
             repository.deleteAll()
         }

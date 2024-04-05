@@ -80,9 +80,9 @@ dependencies {
     implementation ("androidx.recyclerview:recyclerview:1.3.2")
 
     // Coroutine Lifecycle scope
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1")
-    implementation ("androidx.lifecycle:lifecycle-runtime-ktx:2.5.1")
-    implementation ("androidx.lifecycle:lifecycle-livedata-ktx:2.5.1")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")
+    implementation ("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
+    implementation ("androidx.lifecycle:lifecycle-livedata-ktx:2.7.0")
 
     // Kotlin e Coroutines
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.23")

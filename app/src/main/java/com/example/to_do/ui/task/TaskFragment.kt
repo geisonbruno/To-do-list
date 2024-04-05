@@ -10,7 +10,9 @@ import androidx.navigation.fragment.findNavController
 import com.example.to_do.R
 import com.example.to_do.databinding.FragmentTaskBinding
 import com.example.to_do.viewmodel.TaskViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class TaskFragment : Fragment() {
 
     private val viewModel: TaskViewModel by viewModels()
@@ -26,7 +28,9 @@ class TaskFragment : Fragment() {
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
 
-        adapter = TaskAdapter()
+        adapter = TaskAdapter(TaskClickListener { taskEntry ->
+                findNavController().navigate(TaskFragmentDirections.actionTaskFragmentToUpdateFragment(taskEntry))
+        })
 
         viewModel.getAllTasks.observe(viewLifecycleOwner) {
             adapter.submitList(it)
@@ -37,8 +41,10 @@ class TaskFragment : Fragment() {
             binding.recyclerView.adapter = adapter
 
             floatingActionButton.setOnClickListener {
-                findNavController().navigate(R.id.action_taskFragment_to_addFragment)
+                val direction = TaskFragmentDirections.actionTaskFragmentToAddFragment()
+                findNavController().navigate(direction)
             }
+
         }
 
         return binding.root

@@ -10,7 +10,7 @@ import kotlinx.android.parcel.Parcelize
 data class TaskEntry(
     @PrimaryKey(autoGenerate= true)
     var id: Int,
-    var tittle: String,
+    var title: String,
     var priority: Int,
     var timestamp: Long
 ):Parcelable

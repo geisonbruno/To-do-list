@@ -8,7 +8,7 @@ class TaskRepository(val taskDao: TaskDao) {
 
     suspend fun insert(taskEntry: TaskEntry) = taskDao.insert(taskEntry)
 
-    suspend fun updateDate(taskEntry: TaskEntry) = taskDao.update(taskEntry)
+    suspend fun updateData(taskEntry: TaskEntry) = taskDao.update(taskEntry)
 
     suspend fun deleteItem(taskEntry: TaskEntry) = taskDao.delete(taskEntry)
 
