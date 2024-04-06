@@ -35,7 +35,7 @@ class UpdateFragment : Fragment() {
 
             binding.btnUpdate.setOnClickListener {
                 if (TextUtils.isEmpty(binding.updateEdtTask.text)) {
-                    Toast.makeText(requireContext(), "It's empty!", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireContext(), "Adicione uma tarefe!", Toast.LENGTH_SHORT).show()
                 } else {
                     val taskStr = binding.updateEdtTask.text.toString()
                     val priority = binding.updateSpinner.selectedItemPosition

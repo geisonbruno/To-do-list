@@ -37,7 +37,7 @@ class AddFragment : Fragment() {
             spinner.adapter = myAdapter
             binding.btnAdd.setOnClickListener {
                 if (TextUtils.isEmpty((binding.edtTask.text))) {
-                    Toast.makeText(requireContext(), "It's empty!", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireContext(), "Adicione uma tarefa!", Toast.LENGTH_SHORT).show()
                 } else {
                     val titleStr = binding.edtTask.text.toString()
                     val priority = binding.spinner.selectedItemPosition

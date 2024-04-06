@@ -3,13 +3,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/taskFragment">
+    app:startDestination="@id/loginFragment">
 
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.to_do.viewmodel.LoginFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_taskFragment"
+            app:destination="@id/taskFragment" />
+    </fragment>
     <fragment
         android:id="@+id/taskFragment"
         android:name="com.example.to_do.ui.task.TaskFragment"
         android:label="To do list"
-        tools:layout="@layout/fragment_task" >
+        tools:layout="@layout/fragment_task">
         <action
             android:id="@+id/action_taskFragment_to_addFragment"
             app:destination="@id/addFragment"
@@ -29,7 +38,7 @@
         android:id="@+id/addFragment"
         android:name="com.example.to_do.ui.add.AddFragment"
         android:label="Add"
-        tools:layout="@layout/fragment_add" >
+        tools:layout="@layout/fragment_add">
         <action
             android:id="@+id/action_addFragment_to_taskFragment"
             app:destination="@id/taskFragment"
@@ -42,7 +51,7 @@
         android:id="@+id/updateFragment"
         android:name="com.example.to_do.ui.update.UpdateFragment"
         android:label="Update"
-        tools:layout="@layout/fragment_update" >
+        tools:layout="@layout/fragment_update">
         <action
             android:id="@+id/action_updateFragment_to_taskFragment"
             app:destination="@id/taskFragment"

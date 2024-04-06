@@ -29,7 +29,7 @@ class TaskFragment : Fragment() {
         binding.viewModel = viewModel
 
         adapter = TaskAdapter(TaskClickListener { taskEntry ->
-                findNavController().navigate(TaskFragmentDirections.actionTaskFragmentToUpdateFragment(taskEntry))
+            findNavController().navigate(TaskFragmentDirections.actionTaskFragmentToUpdateFragment(taskEntry))
         })
 
         viewModel.getAllTasks.observe(viewLifecycleOwner) {
