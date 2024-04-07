@@ -1,7 +1,11 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
+
+    <attr name="color_background" format="color"/>
+
+    <color name="theme_color">#3E3E3E</color>
+
     <style name="Base.Theme.Todo" parent="Theme.Material3.DayNight.NoActionBar">
-        <item name="colorPrimary">@color/black</item>
+        <item name="colorPrimary">@color/theme_color</item>
     </style>
 
     <style name="Theme.Todo" parent="Base.Theme.Todo" />
