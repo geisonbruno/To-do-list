@@ -4,23 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <variable
             name="taskEntry"
-            type="com.example.to_do.database.TaskEntry" />
+            type="com.android.todolist.data.local.TaskEntry" />
 
         <variable
             name="clickListener"
-            type="com.example.to_do.ui.task.TaskClickListener" />
+            type="com.android.todolist.ui.task.TaskClickListener" />
     </data>
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="4dp"
-        android:onClick="@{() -> clickListener.onClick(taskEntry)}"
         app:cardCornerRadius="8dp"
-        app:cardElevation="4dp">
+        app:cardElevation="4dp"
+        android:onClick="@{() -> clickListener.onClick(taskEntry)}">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/row_background"
@@ -33,13 +32,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:text="@{taskEntry.title}"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:text="Title" />
+                tools:text="Title"
+                android:text="@{taskEntry.title}"/>
 
             <TextView
                 android:id="@+id/taskPriority"
@@ -52,8 +50,8 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/taskTitle"
-                app:setPriority="@{taskEntry.priority}"
-                tools:text="High" />
+                tools:text="High"
+                app:setPriority="@{taskEntry.priority}"/>
 
             <TextView
                 android:id="@+id/taskTimestamp"
@@ -68,8 +66,8 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/taskPriority"
                 app:layout_constraintVertical_bias="0.0"
-                app:setTimestamp="@{taskEntry.timestamp}"
-                tools:text="timestamp" />
+                tools:text="timestamp"
+                app:setTimestamp="@{taskEntry.timestamp}"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </layout>
