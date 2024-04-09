@@ -38,6 +38,8 @@
 
  <img src="img/fluxograma_todo.png" alt="Logo" width="100%" height="100%">
 
+![Captura de tela 2024-04-08 162931 1](https://github.com/geisonbruno1/To-do-list/assets/110945121/e5ba77d1-8b3b-4464-bd52-cd6c0d3a527a)
+
 ---
  Este aplicativo, desenvolvido em Kotlin, oferece uma maneira eficiente e direta de gerenciar tarefas diárias. Com uma interface intuitiva, os usuários podem facilmente adicionar, priorizar e organizar suas obrigações.
 
