@@ -1,5 +1,4 @@
-[![Stargazers][stars-shield]][stars-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
+[![LinkedIn][linkedin-shield]][![Contributors][contributors-shield]][contributors-url][linkedin-url]
 
 
 <br />
@@ -78,8 +77,7 @@ Email: geisonbruno0@gmail.com
 
 
 
-[contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
-[forks-url]: https://github.com/othneildrew/Best-README-Template/network/members
+[contributors-url]: https://github.com/geisonbruno1/To-do-list/graphs/contributors
 [stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
 [stars-url]: https://github.com/geisonbruno1/To-do-list/stargazers
 [issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
