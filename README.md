@@ -1,4 +1,4 @@
-[![LinkedIn][linkedin-shield]][![Contributors][contributors-shield]][contributors-url][linkedin-url]
+[![Contributors][contributors-shield]][contributors-url] [![Stargazers][stars-shield]][stars-url] [![LinkedIn][linkedin-shield]][linkedin-url]
 
 
 <br />
